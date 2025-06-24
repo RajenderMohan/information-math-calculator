@@ -1,0 +1,347 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(0, 240, 255, 0.3); /* New Page Background Color */
+    color: #1e293b; /* slate-800 */
+}
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: rgba(0, 240, 255, 0.1); }
+::-webkit-scrollbar-thumb { background: #0096a5; border-radius: 10px; } /* Darker cyan for scrollbar */
+::-webkit-scrollbar-thumb:hover { background: #007a82; } /* Even darker on hover */
+
+/* Animation for elements fading in on scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Styling for the new "Learn More" button in the footer */
+.footer-button {
+    display: inline-block;
+    padding: 1rem 2rem; /* Consistent padding */
+    border-radius: 0.5rem; /* Rounded corners */
+    font-weight: 600; /* Bolder text */
+    text-decoration: none;
+    color: white;
+    background-color: #0096a5; /* New primary accent color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Smooth, slightly bouncy transition */
+    margin-bottom: 1.5rem; /* Space below button */
+}
+
+.footer-button:hover {
+    transform: translateY(-4px) scale(1.03); /* Lift and slightly scale up */
+    background-color: #007a82; /* Darker shade on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+}
+
+.footer-button:active {
+    transform: translateY(0px) scale(0.97); /* Press effect */
+    background-color: #006068; /* Even darker for active */
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.4); /* Inset shadow */
+}
+
+/* Dark mode adjustments for the footer button */
+.dark-mode .footer-button {
+    background-color: #00bcd4; /* Brighter cyan for dark mode */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .footer-button:hover {
+    background-color: #009fb3;
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .footer-button:active {
+    background-color: #008494;
+    box-shadow: inset 0 3px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Social Icons in Footer - Enhanced Hover */
+footer .social-icons a {
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    transform: scale(1.4) rotate(5deg); /* Larger pop and slight rotation */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Subtle glow */
+}
+
+/* Scroll-to-Top Button */
+#scrollToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 2rem; /* 2rem from the bottom */
+    right: 2rem; /* 2rem from the right */
+    background-color: #0096a5; /* New primary accent color */
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 9999px; /* Fully rounded */
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #007a82; /* Darker shade */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+}
+
+#scrollToTopBtn:active {
+    background-color: #006068; /* Even darker */
+    transform: translateY(0);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+.dark-mode #scrollToTopBtn {
+     background-color: #00bcd4;
+     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
+}
+.dark-mode #scrollToTopBtn:hover {
+    background-color: #009fb3;
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.25);
+}
+.dark-mode #scrollToTopBtn:active {
+    background-color: #008494;
+    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.25);
+}
+
+/* Styling for the Email Contribution button (and general contribution buttons) */
+.email-button, .contribution-button { /* Combined for common styles */
+    display: inline-flex; /* Use flex for icon and text alignment */
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    white-space: nowrap; /* Prevent text wrapping inside button */
+}
+
+.email-button {
+    background-color: #ea4335; /* Google Red */
+}
+
+.email-button:hover {
+    transform: translateY(-2px) scale(1.02);
+    background-color: #c53026; /* Darker red */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.email-button:active {
+    transform: translateY(0px) scale(0.98);
+    background-color: #a3241d; /* Even darker red */
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .email-button {
+    background-color: #c0392b; /* Darker red for dark mode */
+    color: white;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+.dark-mode .email-button:hover {
+    background-color: #a3241d;
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+}
+.dark-mode .email-button:active {
+    background-color: #8a2620;
+    box-shadow: inset 0 3px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* GitHub Pull Request button base style (override Tailwind) */
+.github-pr-button {
+    background-color: #1e293b; /* slate-800 for GitHub */
+    color: white;
+}
+
+.github-pr-button:hover {
+    background-color: #334155; /* slate-700 on hover */
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.github-pr-button:active {
+    background-color: #1e293b; /* Back to original on active */
+    transform: translateY(0px) scale(0.98);
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .github-pr-button {
+    background-color: #64748b; /* slate-500 for dark mode */
+    color: white;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+.dark-mode .github-pr-button:hover {
+    background-color: #475569; /* slate-600 */
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+}
+.dark-mode .github-pr-button:active {
+    background-color: #64748b;
+    box-shadow: inset 0 3px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Header and Nav */
+header {
+    background-color: #00bcd4; /* Cyan-500 equivalent */
+    color: #000000;
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+header h1 {
+    color: #ffffff;
+    text-shadow: 0.3cap 4px 4px rgba(0, 0, 0, 0.5); /* Stronger shadow for light background */
+}
+
+header h1:hover {
+    text-shadow: 0.3cap 6px 6px rgba(0, 0, 0, 0.7);
+}
+
+nav {
+    background-color: #00bcd4;
+}
+
+nav ul {
+    background-color: rgba(0, 188, 212, 0.8); /* Cyan-500 with transparency */
+}
+
+nav ul li {
+    background-color: rgba(0, 150, 165, 0.8); /* Darker cyan with transparency */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Stronger shadow for light background */
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
+}
+
+nav ul li a:hover {
+    color: #1e293b; /* Dark text on hover */
+    box-shadow: 1cap 4px 8px rgba(0, 0, 0, 1.5); /* Very strong shadow on hover */
+}
+
+/* Dark Mode Header and Nav */
+body.dark-mode header {
+    background-color: #1c2e3c; /* Dark version of the new palette */
+    color: #f0fdfa; /* Light text */
+    box-shadow: 4px 4px 8px rgba(255, 255, 255, 0.15);
+}
+body.dark-mode header h1 {
+    color: #f0fdfa;
+    text-shadow: 0.3cap 4px 4px rgba(255, 255, 255, 0.2);
+}
+body.dark-mode nav {
+    background-color: #1c2e3c;
+    box-shadow: 0.8cap 4px 8px rgba(255, 255, 255, 0.15);
+}
+body.dark-mode nav ul {
+    background-color: rgba(28, 46, 60, 0.8);
+    box-shadow: 0.3cap 4px 8px rgba(255, 255, 255, 0.05);
+}
+body.dark-mode nav ul li {
+    background-color: rgba(36, 58, 77, 0.8);
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    text-shadow: 4px 4px 4px rgba(255, 255, 255, 0.1);
+}
+body.dark-mode nav ul li a:hover {
+    color: #00bcd4; /* Bright cyan on hover in dark mode */
+    box-shadow: 1cap 4px 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Calculator and other content sections */
+.calculator,
+#features .bg-white,
+#usage .bg-white,
+#contribute .bg-white,
+#contact .bg-white {
+    background-color: #f0fdfa; /* Lighter shade for content boxes (almost white) */
+}
+
+.dark-mode .calculator,
+.dark-mode #features .bg-white,
+.dark-mode #usage .bg-white,
+.dark-mode #contribute .bg-white,
+.dark-mode #contact .bg-white {
+    background-color: #2b3e4e; /* Darker background for content boxes */
+}
+
+#tech, #install {
+    background-color: rgba(0, 240, 255, 0.1); /* Slightly more opaque version of body background */
+}
+
+.dark-mode #tech, .dark-mode #install {
+    background-color: rgba(28, 46, 60, 0.5); /* Dark transparent background */
+}
+
+/* Footer */
+footer {
+    background-color: #0096a5; /* Darker cyan for footer */
+    color: white;
+}
+.dark-mode footer {
+    background-color: #1c2e3c; /* Dark mode footer color */
+    color: #f0fdfa;
+}
+
+/* Dark mode general body text and button color adjustments */
+body.dark-mode {
+    color: #e2e8f0; /* Light gray text for dark mode */
+    filter: brightness(0.9) contrast(1.1); /* Slightly less aggressive filter */
+}
+
+body.dark-mode .text-slate-600 {
+    color: #cbd5e1; /* Lighter text for slate-600 equivalent in dark mode */
+}
+
+body.dark-mode .text-slate-900 {
+    color: #f0fdfa; /* Lighter text for slate-900 equivalent in dark mode */
+}
+
+body.dark-mode .text-gray-500 {
+    color: #a0aec0; /* Lighter gray for icons */
+}
+
+/* Override specific hover effects to match new palette for tech stack icons */
+.dark-mode .group:hover .fab.fa-html5 { color: #f97316; } /* orange-500 */
+.dark-mode .group:hover .fab.fa-css3-alt { color: #3b82f6; } /* blue-500 */
+.dark-mode .group:hover .fab.fa-js-square { color: #facc15; } /* yellow-400 */
+.dark-mode .group:hover .fab.fa-bootstrap { color: #8b5cf6; } /* purple-500 */
+.dark-mode .group:hover .fab.fa-font-awesome { color: #06b6d4; } /* cyan-500 */
+
+/* New Hero Section Button styling */
+.hero-github-button {
+    background-color: #0096a5; /* Primary accent */
+    color: white;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.hero-github-button:hover {
+    transform: translateY(-4px) scale(1.05);
+    background-color: #007a82;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.hero-github-button:active {
+    transform: translateY(0px) scale(0.98);
+    background-color: #006068;
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+.dark-mode .hero-github-button {
+    background-color: #00bcd4;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+.dark-mode .hero-github-button:hover {
+    background-color: #009fb3;
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+.dark-mode .hero-github-button:active {
+    background-color: #008494;
+    box-shadow: inset 0 3px 8px rgba(255, 255, 255, 0.2);
+}

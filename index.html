@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Online Math Neon Calculator - Project Showcase</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Placeholder Comments -->
+    <!-- Chosen Palette: Fresh Aqua (Background: rgba(0, 240, 255, 0.3), Main Elements: #0096a5, Secondary Elements: #f0fdfa, Text: #1e293b, Dark Mode Base: #1c2e3c) -->
+    <!-- Application Structure Plan: A single-page vertical layout with a fixed side navigation. This structure allows users to see an overview of the project's details and easily navigate to specific sections (Features, Tech Stack, How to Use, etc.). The flow guides the user from a high-level overview to detailed instructions, making it intuitive and logical. -->
+    <!-- Visualization & Content Choices: 
+        - Hero Section: High-impact intro with a screenshot placeholder. Goal: Inform/Engage.
+        - Features Section: Icon-based cards in a grid layout. Goal: Inform. Method: HTML/CSS with Font Awesome icons. Interaction: Hover effects. Justification: Visually breaks down features into digestible, attractive components.
+        - Tech Stack Section: Icons in a flex row. Goal: Inform. Method: Font Awesome brand icons. Justification: More engaging and recognizable than a simple list.
+        - How to Use & Installation: Styled lists and code blocks. Goal: Instruct. Method: HTML/CSS. Justification: Standard, clear format for instructional content.
+        - Contributing/Contact: Simple text sections with clear links. Goal: Engage/Connect.
+        - Footer Button: Direct link to project repo. Goal: Further exploration. Method: HTML <a> tag styled as button with enhanced hover/active effects. Justification: Clear call to action with improved visual feedback.
+        - Social Icons (Footer): Enhanced hover effects. Goal: Engagement. Method: CSS transitions. Justification: Makes interaction more dynamic.
+        - Scroll-to-Top Button: Provides quick navigation for long pages. Goal: Usability. Method: HTML button with JS show/hide. Justification: Improves navigation efficiency.
+        - Contributing Section Buttons: Separate buttons for GitHub Pull Request and Email Ideas, both with distinct icons and enhanced hover/active effects. Goal: Clarify contribution paths and improve visual engagement. Method: HTML <a> tags with Font Awesome icons and consistent styling. Justification: Prevents functional ambiguity and provides clear calls to action for different types of contributions with better interactivity.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <!-- Description -->
+    <meta name="description" content="A simple and user-friendly calculator for basic arithmetic operations including addition, subtraction, multiplication, division, modulo, square, and more.">
+    <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Side Navigation -->
+    <nav id="side-nav" class="fixed top-0 left-0 h-full bg-slate-800 text-white w-16 hover:w-56 transition-all duration-300 ease-in-out z-50 flex flex-col items-center py-8 shadow-2xl group">
+        <div class="mb-10">
+            <i class="fa-solid fa-calculator fa-2x"></i>
+        </div>
+        <ul class="flex flex-col space-y-4 w-full">
+            <li class="nav-item w-full"><a href="#hero" class="flex items-center space-x-4 py-3 px-5 hover:bg-[#007a82] rounded-r-full transition-colors duration-200"><i class="fa-solid fa-house w-6 text-center"></i><span class="nav-text opacity-0 group-hover:opacity-100 transition-opacity duration-200">Home</span></a></li>
+            <li class="nav-item w-full"><a href="#features" class="flex items-center space-x-4 py-3 px-5 hover:bg-[#007a82] rounded-r-full transition-colors duration-200"><i class="fa-solid fa-star w-6 text-center"></i><span class="nav-text opacity-0 group-hover:opacity-100 transition-opacity duration-200">Features</span></a></li>
+            <li class="nav-item w-full"><a href="#tech" class="flex items-center space-x-4 py-3 px-5 hover:bg-[#007a82] rounded-r-full transition-colors duration-200"><i class="fa-solid fa-microchip w-6 text-center"></i><span class="nav-text opacity-0 group-hover:opacity-100 transition-opacity duration-200">Tech Stack</span></a></li>
+            <li class="nav-item w-full"><a href="#usage" class="flex items-center space-x-4 py-3 px-5 hover:bg-[#007a82] rounded-r-full transition-colors duration-200"><i class="fa-solid fa-book-open w-6 text-center"></i><span class="nav-text opacity-0 group-hover:opacity-100 transition-opacity duration-200">How to Use</span></a></li>
+            <li class="nav-item w-full"><a href="#install" class="flex items-center space-x-4 py-3 px-5 hover:bg-[#007a82] rounded-r-full transition-colors duration-200"><i class="fa-solid fa-download w-6 text-center"></i><span class="nav-text opacity-0 group-hover:opacity-100 transition-opacity duration-200">Install</span></a></li>
+            <li class="nav-item w-full"><a href="#contribute" class="flex items-center space-x-4 py-3 px-5 hover:bg-[#007a82] rounded-r-full transition-colors duration-200"><i class="fa-solid fa-code-fork w-6 text-center"></i><span class="nav-text opacity-0 group-hover:opacity-100 transition-opacity duration-200">Contribute</span></a></li>
+            <li class="nav-item w-full"><a href="#contact" class="flex items-center space-x-4 py-3 px-5 hover:bg-[#007a82] rounded-r-full transition-colors duration-200"><i class="fa-solid fa-envelope w-6 text-center"></i><span class="nav-text opacity-0 group-hover:opacity-100 transition-opacity duration-200">Contact</span></a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="ml-16 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto px-6 md:px-12 py-12">
+            
+            <!-- Hero Section -->
+            <section id="hero" class="min-h-screen flex items-center reveal">
+                <div class="w-full">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <h1 class="text-4xl md:text-6xl font-bold text-slate-900 mb-4 leading-tight">Interactive Online Math Neon - Calculator</h1>
+                                <p class="text-lg text-slate-600 mb-6">A sleek, responsive, and user-friendly online calculator built with modern web technologies. This project provides basic arithmetic operations, a history log, theme toggling, and a smooth user experience.</p>
+                                <a href="https://github.com/RajenderMohan/neon-Calculator" target="_blank" class="hero-github-button">
+                                    <i class="fab fa-github mr-2"></i> View on GitHub
+                                </a>
+                            </div>
+                            <div class="flex justify-center">
+                                <img src="./assets/screenshot.png" alt="Calculator Screenshot" class="rounded-2xl shadow-2xl w-full h-auto object-cover ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section id="features" class="py-20 reveal">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-slate-900">🚀 Features</h2>
+                    <p class="text-slate-600 mt-2">Explore the powerful features that make this calculator stand out.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature Card -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <i class="fa-solid fa-calculator text-3xl text-[#0096a5] mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Basic Arithmetic</h3>
+                        <p class="text-slate-600">Perform addition, subtraction, multiplication, division, modulo, and square calculations with ease.</p>
+                    </div>
+                    <!-- Feature Card -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <i class="fa-solid fa-list-check text-3xl text-[#0096a5] mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Calculation History</h3>
+                        <p class="text-slate-600">Keeps track of your previous operations, allowing for easy reference and review of your work.</p>
+                    </div>
+                    <!-- Feature Card -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <i class="fa-solid fa-mobile-screen-button text-3xl text-[#0096a5] mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Responsive Design</h3>
+                        <p class="text-slate-600">Fully optimized for seamless use on desktops, tablets, and mobile phones.</p>
+                    </div>
+                    <!-- Feature Card -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <i class="fa-solid fa-circle-half-stroke text-3xl text-[#0096a5] mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Dynamic Theme</h3>
+                        <p class="text-slate-600">Switch between a vibrant light mode and a comfortable dark mode. Your preference is saved locally.</p>
+                    </div>
+                    <!-- Feature Card -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <i class="fa-solid fa-keyboard text-3xl text-[#0096a5] mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Keyboard Support</h3>
+                        <p class="text-slate-600">Use your keyboard's number pad and operation keys for faster and more efficient calculations.</p>
+                    </div>
+                     <!-- Feature Card -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <i class="fa-solid fa-link text-3xl text-[#0096a5] mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Semantic URLs</h3>
+                        <p class="text-slate-600">Navigation utilizes hash-based URLs for a modern single-page application experience without page reloads.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tech Stack Section -->
+            <section id="tech" class="py-20 bg-slate-100 rounded-2xl reveal">
+                 <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-slate-900">🛠️ Tech Stack</h2>
+                    <p class="text-slate-600 mt-2">The modern technologies used to build this project.</p>
+                </div>
+                <div class="flex justify-center items-center gap-8 md:gap-16 flex-wrap">
+                    <div class="text-center group"><i class="fab fa-html5 fa-4x text-gray-500 group-hover:text-orange-500 transition-colors"></i><p class="mt-2 font-medium">HTML5</p></div>
+                    <div class="text-center group"><i class="fab fa-css3-alt fa-4x text-gray-500 group-hover:text-blue-500 transition-colors"></i><p class="mt-2 font-medium">CSS3</p></div>
+                    <div class="text-center group"><i class="fab fa-js-square fa-4x text-gray-500 group-hover:text-yellow-400 transition-colors"></i><p class="mt-2 font-medium">JavaScript</p></div>
+                    <div class="text-center group"><i class="fab fa-bootstrap fa-4x text-gray-500 group-hover:text-purple-600 transition-colors"></i><p class="mt-2 font-medium">Bootstrap</p></div>
+                    <div class="text-center group"><i class="fab fa-font-awesome fa-4x text-gray-500 group-hover:text-cyan-500 transition-colors"></i><p class="mt-2 font-medium">Font Awesome</p></div>
+                </div>
+            </section>
+
+            <!-- How to Use Section -->
+            <section id="usage" class="py-20 reveal">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-slate-900">💡 How to Use</h2>
+                    <p class="text-slate-600 mt-2">Accept the main business of Easter and how to use it.</p>
+                </div>
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+                    <ol class="list-decimal list-inside space-y-4 text-slate-700">
+                        <li><span class="font-semibold">Input Numbers:</span> Click the number buttons (0-9) or use your keyboard.</li>
+                        <li><span class="font-semibold">Perform Operations:</span> Click the operator buttons (+, -, *, /, %, x²).</li>
+                        <li><span class="font-semibold">Get Result:</span> Press the `=` button or `Enter` key.</li>
+                        <li><span class="font-semibold">Clear Display:</span> Use `AC` to reset the calculator and `DEL` to remove the last digit.</li>
+                        <li><span class="font-semibold">Clear All History:</span> Press the button `Clear History` then clear all history.</li>
+                        <li><span class="font-semibold">Toggle Theme:</span> Click the ☀️ or 🌙 icons in the corner to switch themes.</li>
+                    </ol>
+                </div>
+            </section>
+
+             <!-- Installation Section -->
+            <section id="install" class="py-20 bg-slate-100 rounded-2xl reveal">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-slate-900">⬇️ Installation</h2>
+                    <p class="text-slate-600 mt-2">Get a local copy up and running in a few simple steps.</p>
+                </div>
+                <div class="max-w-2xl mx-auto">
+                    <div class="mb-6">
+                        <h3 class="font-semibold text-lg mb-2">1. Clone the repository:</h3>
+                        <div class="bg-slate-800 text-white p-4 rounded-lg font-mono text-sm shadow-inner">
+                            <span class="text-green-400">$</span> git clone https://github.com/your-username/neon-calculator.git
+                        </div>
+                    </div>
+                     <div class="mb-6">
+                        <h3 class="font-semibold text-lg mb-2">2. Navigate to the project directory:</h3>
+                        <div class="bg-slate-800 text-white p-4 rounded-lg font-mono text-sm shadow-inner">
+                            <span class="text-green-400">$</span> cd neon-calculator
+                        </div>
+                    </div>
+                     <div>
+                        <h3 class="font-semibold text-lg mb-2">3. Open index.html:</h3>
+                        <p class="text-slate-700">Simply open the `index.html` file in your preferred web browser. No special server setup is required.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contributing & Contact Section -->
+            <section class="py-20 bg-slate-100 rounded-2xl reveal">
+                <div id="contribute" class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-4xl font-bold text-slate-900 mb-4">🤝 Contributing</h2>
+                    <p class="text-slate-600 mb-8">We welcome contributions! If you have ideas for new features, bug fixes, or general improvements, please choose one of the options below to get involved:</p>
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                        <a href="https://github.com/RajenderMohan/neon-calculator/pulls" target="_blank" class="contribution-button github-pr-button hover:scale-105 hover:shadow-xl transition-all duration-300">
+                           <i class="fab fa-github mr-2"></i> Open a Pull Request
+                        </a>
+                        <a href="https://mail.google.com/mail/u/0/?fs=1&to=rajendermohan7800@gmail.com&tf=cm" class="email-button hover:scale-105 hover:shadow-xl transition-all duration-300">
+                            <i class="fas fa-envelope mr-2"></i> Email Contribution Ideas
+                        </a>
+                    </div>
+                </div>
+                <div id="contact" class="max-w-4xl mx-auto text-center pt-20"> <!-- Contact section within same background -->
+                    <h2 class="text-4xl font-bold text-slate-900 mb-4">📧 Contact</h2>
+                    <p class="text-slate-600 mb-8">Get in touch with the developer, Rajender Mohan Verma, for any questions, feedback, or direct communication.</p>
+                    <div class="flex justify-center space-x-6">
+                       <a href="https://mail.google.com/mail/u/0/?fs=1&to=rajendermohan7800@gmail.com&tf=cm" class="text-2xl text-slate-500 hover:text-red-500 transition-colors hover:scale-125"><i class="fas fa-envelope"></i></a>
+                       <a href="https://github.com/RajenderMohan" target="_blank" class="text-2xl text-slate-500 hover:text-gray-800 transition-colors hover:scale-125"><i class="fab fa-github"></i></a>
+                       <a href="https://www.linkedin.com/in/rajender-mohan-verma-10418432a/" target="_blank" class="text-2xl text-slate-500 hover:text-blue-600 transition-colors hover:scale-125"><i class="fab fa-linkedin-in"></i></a>
+                       <a href="https://x.com/Rajendermv7800" target="_blank" class="text-2xl text-slate-500 hover:text-black transition-colors hover:scale-125"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-slate-800 text-white py-8 text-center mt-12 shadow-inner">
+        <div class="container mx-auto px-6 md:px-12">
+            <!-- Learn More Button -->
+            <a href="https://github.com/RajenderMohan/Interactive-Calculator" target="_blank" class="footer-button">
+                Go Back Calculator (Neon Calculator)
+            </a>
+            <div class="social-icons flex justify-center space-x-6 mb-6">
+               <a href="https://mail.google.com/mail/u/0/?fs=1&to=rajendermohan7800@gmail.com&tf=cm" class="text-2xl text-white hover:text-red-500 transition-colors"><i class="fas fa-envelope"></i></a>
+               <a href="https://github.com/RajenderMohan" target="_blank" class="text-2xl text-white hover:text-gray-400 transition-colors"><i class="fab fa-github"></i></a>
+               <a href="https://www.linkedin.com/in/rajender-mohan-verma-10418432a/" target="_blank" class="text-2xl text-white hover:text-blue-400 transition-colors"><i class="fab fa-linkedin-in"></i></a>
+               <a href="https://x.com/Rajendermv7800" target="_blank" class="text-2xl text-white hover:text-blue-300 transition-colors"><i class="fab fa-twitter"></i></a>
+               <a href="https://www.instagram.com/rajender_maurya.01/" target="_blank" class="text-2xl text-white hover:text-pink-500 transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="text-slate-400 text-sm">&copy; 2025 Interactive Online Math Calculator Develop by Rajender Mohan Verma. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="bg-sky-600 text-white rounded-full p-3 shadow-lg hover:bg-sky-700 transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src = "./assets/scripts.js"></script>
+</body>
+</html>
